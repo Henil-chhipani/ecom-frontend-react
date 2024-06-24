@@ -5,8 +5,16 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
+import { useDispatch } from "react-redux";
+import { addToCart } from "../actions/cartActions";
 
 const ProductCard = ({ product }) => {
+    const dispatch = useDispatch();
+
+    const handleAddToCart = () => {
+      dispatch(addToCart(product));
+    };
+
   return (
     <Card sx={{ maxWidth: 345, margin: 3 }}>
       <CardMedia
@@ -26,7 +34,7 @@ const ProductCard = ({ product }) => {
         </Typography>
       </CardContent>
       <CardActions>
-        <Button size="small" variant="contained">
+        <Button size="small" variant="contained" onClick={handleAddToCart}>
           Buy
         </Button>
       </CardActions>

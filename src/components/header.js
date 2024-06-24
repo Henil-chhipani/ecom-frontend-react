@@ -40,7 +40,9 @@ export default function Header(){
           setSuccessMessage('');
         }
       };
-
+const cart = ()=>{
+    navigate('/cart');
+}
 
 
     return (
@@ -59,6 +61,7 @@ export default function Header(){
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             Ecom
           </Typography>
+          
           <Button color="inherit" onClick={handleLogout}>Logout</Button>
         </Toolbar>
       </AppBar>
